@@ -1,7 +1,15 @@
 
+// https://jsonplaceholder.typicode.com - base URL
+// photos - endpoint
+
 fetch('https://jsonplaceholder.typicode.com/photos')
-      .then(response => response.json())
-      .then(json => displayCard(json.filter((item, index) => index < 10)))
+      .then(response => {
+            return response.json()
+      })
+      .then(data => {
+            console.log(data)
+            return displayCard(data.filter((item, index) => index < 10))
+      })
 
 function displayCard(photos)
 {
